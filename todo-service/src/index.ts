@@ -1,11 +1,10 @@
-import Todo from "./model/todo";
 import MongodbTodo from "./helper/mongodb-todo";
 import express from "express";
 import bodyParser from "body-parser";
 import {ObjectID} from "mongodb";
 import JsonWebToken, {SignOptions} from "jsonwebtoken";
 import jwt from "express-jwt";
-import User from "./model/user";
+import { User, Todo } from "todo-assistant-models";
 import fs from "fs";
 
 const app = express();
