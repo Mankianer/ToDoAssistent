@@ -1,0 +1,42 @@
+###
+GET  http://localhost:3000
+Content-Type: application/json
+Authorization: Bearer {{accessToken}}
+
+###
+POST  http://localhost:3000
+Content-Type: application/json
+Authorization: Bearer {{accessToken}}
+
+{
+  "titel": "test",
+  "description": "beschreibung..."
+}
+
+###
+PUT  http://localhost:3000
+Content-Type: application/json
+
+{
+  "_id": "6081d42884fd65334c6c1333",
+  "titel": "test23",
+  "description": "beschreibungX2..."
+}
+
+###
+DELETE http://localhost:3000
+Content-Type: application/json
+
+{
+  "_id": "60832fb4f85faf0dd8cebca3"
+}
+
+###
+POST http://localhost:3000/token
+Content-Type: application/json
+
+
+{
+  "username": "user",
+  "password": ""
+}
