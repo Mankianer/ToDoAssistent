@@ -1,17 +1,18 @@
-FROM node:12 as build
+FROM node:12
 
 #Env
 ENV TZ=Europe/Berlin
-
 # Set the timezone in docker
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+
 
 # Create Directory for the Container
 WORKDIR /usr/src/app
 
 
 # install Packeges
-COPY . .
+COPY libs/ libs/
+COPY todo-service/ todo-service/
 
 RUN chmod -R a+rwx .
 
@@ -30,8 +31,11 @@ WORKDIR /usr/src/app/todo-service
 RUN npm install
 RUN npm run build
 
+
+## Finished Build Module
+
 EXPOSE 3000
 
-#ENTRYPOINT ["sh", ""]
-CMD ["npm", "start"]
+WORKDIR /usr/src/app/todo-service
+CMD ["node", "."]
 
