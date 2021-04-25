@@ -15,14 +15,19 @@ COPY . .
 
 RUN chmod -R a+rwx .
 
+# Build Libs
+WORKDIR /usr/src/app/libs/express-utils
+RUN npm install
+RUN npm run build
+WORKDIR /usr/src/app/libs/todo-assistant-models
+RUN npm install
+RUN npm run build
 
+# Build service
 WORKDIR /usr/src/app/todo-service
 
 # Install all Packages
 RUN npm install
-RUN ls -al ../..
-RUN ls -al node_modules
-#
 RUN npm run build
 
 EXPOSE 3000
