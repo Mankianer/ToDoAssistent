@@ -1,7 +1,7 @@
 import {Collection, MongoClient} from "mongodb";
 import {Todo} from 'todo-assistant-models';
 
-export default class MongodbTodo {
+export class MongodbTodo {
 
   user = 'todo_dev';
   password = 'todo';
