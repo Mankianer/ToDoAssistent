@@ -3,15 +3,10 @@ import {Todo} from 'todo-assistant-models';
 
 export class MongodbTodo {
 
-  user = 'admin';
-  password = 'admin';
-  dbName = 'todos';
-  authDbName = 'admin';
-  dbSchema = 'todos';
-  authMechanism = `SCRAM-SHA-1&authSource=${this.authDbName}`;
-  mongodbadress = process.env.MONGODB_ADRESS || 'localhost:27017';
+  dbName = process.env.MONGODB_DB || 'todos';
+  dbCollection = process.env.MONGODB_COLLECTION || 'todos';
   // Connection URL
-  url = `mongodb://${this.user}:${this.password}@${this.mongodbadress}/?authMechanism=${this.authMechanism}&useUnifiedTopology=true`;
+  url = process.env.MONGODB_URL || 'mongodb://admin:admin@localhost:27017/?authMechanism=SCRAM-SHA-1&authSource=admin&useUnifiedTopology=true';
   client: MongoClient;
   todoCollection: Collection;
 
@@ -23,7 +18,7 @@ export class MongodbTodo {
         return;
       }
       console.log('MongoDB connected successfully');
-      this.todoCollection = this.client.db(this.dbName).collection(this.dbSchema);
+      this.todoCollection = this.client.db(this.dbName).collection(this.dbCollection);
       // client.close();
     });
   }

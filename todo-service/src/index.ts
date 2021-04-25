@@ -15,14 +15,13 @@ app.use(bodyParser.json());
 app.use(bodyParser.raw());
 
 
-app.use(jwt(JwtUtils.jwtRequstHandlerOption).unless({path: ['/token']}));
+app.use(jwt(JwtUtils.jwtRequstHandlerOption));
 
 const mongodb = new MongodbTodo();
 
 const port = process.env.PORT || 3000;
 
 app.get('/', (req, res) => {
-  // const todo = new Todo();
   mongodb.findAllTodo((value) => {
     res.send(value);
   });

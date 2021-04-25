@@ -14,10 +14,13 @@ app.use(bodyParser.json());
 app.use(bodyParser.raw());
 
 const port = process.env.PORT || 3001;
+const userFile = process.env.USER_FILE || 'dev/users.json';
 
 app.use(jwt(JwtUtils.jwtRequstHandlerOption).unless({path: ['/token']}));
 
-const users = [new User('user'), new User('admin', 'admin', 'admin')];
+let users: User[];
+users = JSON.parse(fs.readFileSync(userFile).toString());
+
 
 app.post('/token', (req, res) => {
   // Read username and password from request body
