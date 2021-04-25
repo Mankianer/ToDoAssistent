@@ -1,6 +1,6 @@
 {
   "name": "express-utils",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "",
   "main": "dist/index.js",
   "type": "dist/index.d.ts",
