@@ -2,19 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="766a1efc-0378-4243-aa71-24678055ce2b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../todo-assistant-models/tsconfig.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/indes.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../todo-assistant-models/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../todo-assistant-models/src/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../todo-assistant-models/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../todo-assistant-models/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../todo-service/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../todo-service/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../todo-service/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../todo-service/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../todo-service/src/helper/mongodb-todo.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../todo-service/src/helper/mongodb-todo.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../todo-service/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../todo-service/src/index.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,7 +100,7 @@
       <updated>1619289438973</updated>
       <workItem from="1619289440265" duration="7923000" />
       <workItem from="1619303012865" duration="98000" />
-      <workItem from="1619345482202" duration="931000" />
+      <workItem from="1619345482202" duration="1530000" />
     </task>
     <task id="LOCAL-00001" summary="add express-utils">
       <created>1619291034006</created>
