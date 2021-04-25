@@ -2,6 +2,7 @@ FROM node:12
 
 #Env
 ENV TZ=Europe/Berlin
+ENV PORT=3001
 # Set the timezone in docker
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
@@ -23,9 +24,9 @@ WORKDIR /usr/src/app/libs/todo-assistant-models
 RUN npm install
 RUN npm run build
 
-COPY todo-service/ todo-service/
+COPY auth-jwt-service/ auth-jwt-service/
 # Build service
-WORKDIR /usr/src/app/todo-service
+WORKDIR /usr/src/app/auth-jwt-service
 
 # Install all Packages
 RUN npm install
@@ -34,8 +35,8 @@ RUN npm run build
 
 ## Finished Build Module
 
-EXPOSE 3000
+EXPOSE ${PORT}
 
-WORKDIR /usr/src/app/todo-service
+WORKDIR /usr/src/app/auth-jwt-service
 CMD ["node", "."]
 

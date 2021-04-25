@@ -8,6 +8,12 @@ services:
       - "3000:3000"
     environment:
       MONGODB_ADRESS: mongodb
+  auth-jwt:
+    build:
+      context: .
+      dockerfile: ./auth-jwt-service/Dockerfile
+    ports:
+      - "3001:3001"
   mongodb:
     image: "mongo:latest"
     volumes:
