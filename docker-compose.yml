@@ -1,0 +1,23 @@
+version: "3.9"
+services:
+  todo:
+    build:
+      context: .
+      dockerfile: ./todo-service/Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      MONGODB_ADRESS: mongodb
+  mongodb:
+    image: "mongo:latest"
+    volumes:
+      - /var/data/mongodb:/data/db
+    ports:
+      - "27017:27017"
+      - "27018:27018"
+      - "27019:27019"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: "admin"
+      MONGO_INITDB_ROOT_PASSWORD: "admin"
+
+

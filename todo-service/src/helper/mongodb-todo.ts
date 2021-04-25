@@ -3,13 +3,15 @@ import {Todo} from 'todo-assistant-models';
 
 export class MongodbTodo {
 
-  user = 'todo_dev';
-  password = 'todo';
+  user = 'admin';
+  password = 'admin';
   dbName = 'todos';
+  authDbName = 'admin';
   dbSchema = 'todos';
-  authMechanism = `SCRAM-SHA-1&authSource=${this.dbName}`;
+  authMechanism = `SCRAM-SHA-1&authSource=${this.authDbName}`;
+  mongodbadress = process.env.MONGODB_ADRESS || 'localhost:27017';
   // Connection URL
-  url = `mongodb://${this.user}:${this.password}@localhost:27017/?authMechanism=${this.authMechanism}&useUnifiedTopology=true`;
+  url = `mongodb://${this.user}:${this.password}@${this.mongodbadress}/?authMechanism=${this.authMechanism}&useUnifiedTopology=true`;
   client: MongoClient;
   todoCollection: Collection;
 
