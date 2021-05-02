@@ -23,6 +23,3 @@ RUN chmod -R a+rwx .
 RUN ./project_setUp.sh
 
 ## Finished Build Module
-
-CMD ["sh", "./start.sh"]
-
