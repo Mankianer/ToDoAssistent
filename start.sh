@@ -1,5 +1,5 @@
-echo $0/$MODULE
-cd $0/$MODULE
+echo $WORKDIR/$MODULE
+cd $WORKDIR/$MODULE
 ls -al
 npm install
 npm start

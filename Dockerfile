@@ -3,6 +3,7 @@ FROM node:12
 #Env
 ENV TZ=Europe/Berlin
 ENV MODULE=todo-service
+ENV WORKDIR=/usr/src/ToDoAssistent
 
 # Set the timezone in docker
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
