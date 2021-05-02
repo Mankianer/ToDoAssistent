@@ -12,9 +12,11 @@ Review-System für erledigte/ verschobene Task
 Tages Routinen mit Benachrichtigungen, Auswahl von Todos, AufgabenReflexion, TagesInfos, etc    
 
 ## Build/ Deployment
-Jedes Modul soll mittels Dockerfile zum Bauen und Deployen definiert sein.  
-In der [docker-compose.yml](docker-compose.yml) sollen alle Module mit benötigten Containern 
-zusammen gefasst sein.  
+In der [docker-compose.yml](docker-compose.yml) wird ein Master Image gebaut.
+Dieses beinhaltet alle Services.
+
+## setUp Projekt Struktur
+führe project_setUp.bat oder project_setUp.sh aus. 
 
 Startbefehl:  
 ```
@@ -47,4 +49,9 @@ ENV MONGODB_COLLECTION= default: todos //MongoDB Collection for todos
 ````
 ENV PORT= default: 3001 //Port
 ENV USER_FILE= default: dev/users.json //Path to a .Json-file for login
+````
+
+### Planing-Service
+````
+ENV PORT= default: 3003 //Port
 ````
