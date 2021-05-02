@@ -1,14 +1,3 @@
-import { ObjectID } from "mongodb";
-
-export interface Todo {
-  _id: ObjectID;
-  type: string;
-  title: '';
-  description: '';
-  status: string;
-  priority: number;
-}
-
 export class User {
   username: string;
   password = '';

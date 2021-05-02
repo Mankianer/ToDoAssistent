@@ -2,10 +2,10 @@ import express from "express";
 import bodyParser from "body-parser";
 import {ObjectID} from "mongodb";
 import JsonWebToken, {SignOptions} from "jsonwebtoken";
-import {JwtUtils} from "express-utils";
+import {JwtUtils} from "./libs/express-utils/express-utils";
 import jwt from "express-jwt";
 
-import {User, Todo} from "todo-assistant-models";
+import {User} from "./models/User";
 import fs from "fs";
 
 const app = express();

@@ -1,4 +1,3 @@
-// import * as jwt from "express-jwt";
 import * as fs from "fs";
 import {Algorithm} from "jsonwebtoken";
 
