@@ -14,7 +14,6 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 app.use(bodyParser.raw());
 
-
 app.use(jwt(JwtUtils.jwtRequstHandlerOption));
 
 const mongodb = new MongodbTodo();
