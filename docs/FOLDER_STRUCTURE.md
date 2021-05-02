@@ -9,11 +9,13 @@ ToDoAssistent                           (root-project-folder)
 │   └───<lib-name>                      (project-library)
 │ 
 ├───<module-name>/                      (module)  
-│   ├───Dockerfile  //Stand-Alone-Container
 │   └───.gitignore  //module-custom .gitignore
 ├───auth-jwt-service/                   (module)  
 ├───todo-service/                       (module)
+├───.....                          
+├───...                          
 │   
+├───Dockerfile  //Master Image Build
 ├───docker-compose.yml  //start up      (START)
 └───    
 ```
