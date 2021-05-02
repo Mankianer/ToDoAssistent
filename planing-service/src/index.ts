@@ -11,7 +11,7 @@ app.use(bodyParser.raw());
 
 app.use(jwt(JwtUtils.jwtRequstHandlerOption));
 
-const port = process.env.PORT || 3002;
+const port = process.env.PORT || 3003;
 
 app.get('/', (req, res) => {
   return 'ok';

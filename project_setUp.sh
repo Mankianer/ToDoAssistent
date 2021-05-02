@@ -6,3 +6,4 @@ makelink() {
 
 makelink todo-service
 makelink auth-jwt-service
+makelink planing-service

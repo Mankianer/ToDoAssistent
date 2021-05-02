@@ -27,6 +27,16 @@ services:
       - PORT=3001
     ports:
       - "3001:3001"
+  planing-service:
+    image: mankiprimat/todoassistent:last
+    depends_on:
+      - master
+    command: [ "sh", "./start.sh" ]
+    environment:
+      - MODULE=planing-service
+      - PORT=3002
+    ports:
+      - "3003:3003"
   mongodb:
     image: "mongo:latest"
     volumes:
