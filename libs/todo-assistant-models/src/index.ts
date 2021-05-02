@@ -1,22 +1,22 @@
 import { ObjectID } from "mongodb";
 
-export class Todo {
-  public  _id: ObjectID;
-  public type = " ";
-  public titel = " ";
-  public description = " ";
-  public status = " ";
-  public priority = 0;
+export interface Todo {
+  _id: ObjectID;
+  type: string;
+  title: '';
+  description: '';
+  status: string;
+  priority: number;
 }
 
 export class User {
-  public username: string;
-  public password: string;
-  public role: string;
+  username: string;
+  password = '';
+  role = 'user';
 
   constructor(username: string, password?: string, role?: string) {
     this.username = username;
-    this.password = password || '';
-    this.role = role || 'user';
+    this.password = password || this.password;
+    this.role = role || this.role;
   }
 }

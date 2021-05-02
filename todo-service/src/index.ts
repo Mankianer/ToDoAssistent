@@ -6,7 +6,7 @@ import JsonWebToken, {SignOptions} from "jsonwebtoken";
 import {JwtUtils} from "express-utils";
 import jwt from "express-jwt";
 
-import {User, Todo} from "todo-assistant-models";
+import {Todo} from "./models/todo";
 import fs from "fs";
 
 const app = express();

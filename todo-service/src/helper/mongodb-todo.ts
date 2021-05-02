@@ -1,5 +1,5 @@
 import {Collection, MongoClient} from "mongodb";
-import {Todo} from 'todo-assistant-models';
+import {Todo} from '../models/todo';
 
 export class MongodbTodo {
 
