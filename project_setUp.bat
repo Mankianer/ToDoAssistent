@@ -3,6 +3,7 @@ SETLOCAL
 
 call :link todo-service
 call :link auth-jwt-service
+call :link planing-service
 
 exit /B
 
