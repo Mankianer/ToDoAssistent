@@ -1,17 +1,27 @@
 version: "3.9"
 services:
-  todo:
+  master:
     build:
       context: .
-      dockerfile: ./todo-service/Dockerfile
+      dockerfile: Dockerfile
+    image: mankiprimat/todoassistent:last
+  todo:
+    image: mankiprimat/todoassistent:last
+    depends_on:
+      - master
+      - mongodb
+    environment:
+      - MODULE=todo-service
+      - PORT=3000
     ports:
       - "3000:3000"
-    environment:
-      MONGODB_ADRESS: mongodb
   auth-jwt:
-    build:
-      context: .
-      dockerfile: ./auth-jwt-service/Dockerfile
+    image: mankiprimat/todoassistent:last
+      depends_on:
+        - master
+    environment:
+      - MODULE=auth-jwt-service
+      - PORT=3001
     ports:
       - "3001:3001"
   mongodb:
