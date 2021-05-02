@@ -9,11 +9,13 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 
 # Create Directory for the Container
-WORKDIR /usr/ToDoAssistent
+WORKDIR /usr/src/ToDoAssistent
 
 
 # copy
 RUN git clone https://github.com/Mankianer/ToDoAssistent.git .
+
+RUN ls -al
 
 RUN chmod -R a+rwx .
 
@@ -22,5 +24,5 @@ RUN ./project_setUp.sh
 
 ## Finished Build Module
 
-CMD ["sh", "./start.sh", "${MODULE}"]
+CMD ["sh", "./start.sh"]
 
