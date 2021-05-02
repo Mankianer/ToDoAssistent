@@ -1,3 +1,3 @@
-cd $1
+cd $MODULE
 npm install
 npm start

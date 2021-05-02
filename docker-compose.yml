@@ -9,7 +9,6 @@ services:
     image: mankiprimat/todoassistent:last
     depends_on:
       - master
-      - mongodb
     environment:
       - MODULE=todo-service
       - PORT=3000
@@ -17,8 +16,8 @@ services:
       - "3000:3000"
   auth-jwt:
     image: mankiprimat/todoassistent:last
-      depends_on:
-        - master
+    depends_on:
+      - master
     environment:
       - MODULE=auth-jwt-service
       - PORT=3001
