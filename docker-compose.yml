@@ -34,7 +34,7 @@ services:
     command: [ "sh", "./start.sh" ]
     environment:
       - MODULE=planing-service
-      - PORT=3002
+      - PORT=3003
     ports:
       - "3003:3003"
   mongodb:
