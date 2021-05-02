@@ -12,6 +12,7 @@ services:
       - master
     command: ["sh", "./start.sh"]
     environment:
+      - MONGODB_URL=mongodb://admin:admin@mongodb:27017/?authMechanism=SCRAM-SHA-1&authSource=admin&useUnifiedTopology=true
       - MODULE=todo-service
       - PORT=3000
     ports:
