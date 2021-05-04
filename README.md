@@ -31,8 +31,8 @@ Im Folgenden sind die Umgebungsvariablen global und pro Modul aufgeführt.
 _verfügbar in libs Modulen_  
 **libs/express-utils**
 ````
-ENV SSH_KEY_PUBLIC_PATH= default: dev/default-sshkey.pub //JWT-Public Key (currently unsed)
-ENV SSH_KEY_PRIVATE_PATH= default: dev/default-sshkey //JWT-Private Key
+ENV SSH_KEY_PUBLIC_PATH= default: ../shared-config/default-sshkey.pub //JWT-Public Key (currently unsed)
+ENV SSH_KEY_PRIVATE_PATH= default: ../shared-config/default-sshkey //JWT-Private Key
 ENV JWT_EXPIRESIN= default: 10m //JWT-Expire In Time
 ENV JWT_ALGORITHMS= default: HS256 //JWT Algorithmus (currently only HS256 works)
 ````
