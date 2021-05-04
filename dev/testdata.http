@@ -7,37 +7,33 @@ Authorization: Bearer {{accessTokenEndless}}
   {
     "title": "test_Template_Routine_0",
     "category": "Routine",
-    "latestFinish": "Tue Aug 31 2021 18:04:43 GMT+0000 (UTC)",
-    "status": "todo",
-    "priority": 2,
-    "description": "Eiusmod commodo ex fugiat elit consectetur exercitation aliquip. Irure sint in esse dolore cupidatat. Esse ipsum sint elit velit laborum labore commodo.",
+    "priority": 1,
+    "description": "Quis veniam tempor ad sunt mollit in. Officia laborum aliqua magna veniam cillum excepteur laborum reprehenderit commodo laboris. Pariatur occaecat anim ullamco ipsum eiusmod anim nulla qui elit eu ex sit.",
+    "templatePeriod": 1,
     "isTemplate": true
   },
   {
     "title": "test_Template_Routine_1",
     "category": "Routine",
-    "latestFinish": "Fri Sep 24 2021 14:48:33 GMT+0000 (UTC)",
-    "status": "todo",
     "priority": 0,
-    "description": "Do officia ullamco dolor nisi reprehenderit sint sit proident minim minim nulla minim. Mollit duis id eu laborum pariatur dolor consequat anim incididunt labore ipsum. Deserunt aliqua tempor tempor dolor veniam excepteur officia nisi veniam aliquip ipsum ullamco est ullamco.",
+    "description": "Dolore esse tempor duis veniam Lorem fugiat nostrud eiusmod. Veniam ullamco velit nostrud ipsum qui sint. Adipisicing velit aute incididunt dolore nulla incididunt occaecat pariatur consectetur quis esse.",
+    "templatePeriod": 2,
     "isTemplate": true
   },
   {
     "title": "test_Routine_0",
     "category": "Routine",
-    "latestFinish": "Wed May 19 2021 08:53:43 GMT+0000 (UTC)",
     "status": "todo",
-    "priority": 0,
-    "description": "Ullamco sunt sunt mollit fugiat consectetur irure ex tempor magna deserunt proident non excepteur laborum. Ea nisi et voluptate ex nostrud Lorem consequat fugiat veniam. Laborum aliqua tempor fugiat cillum.",
+    "priority": 1,
+    "description": "Dolor velit elit non sunt voluptate sit proident cillum anim. Ea exercitation ullamco deserunt proident consectetur id commodo nulla laboris occaecat sunt. Laborum nisi proident cupidatat eu et fugiat ullamco.",
     "isTemplate": false
   },
   {
     "title": "test_Routine_1",
     "category": "Routine",
-    "latestFinish": "Fri May 07 2021 02:24:21 GMT+0000 (UTC)",
     "status": "todo",
-    "priority": "-1",
-    "description": "Aliquip exercitation eu irure in commodo elit et. Mollit amet id cupidatat consectetur nisi incididunt laboris. Ex fugiat nostrud aute officia est sint sint.",
+    "priority": 2,
+    "description": "Deserunt pariatur incididunt Lorem aliqua sit ipsum exercitation proident commodo proident. Exercitation aliqua consequat reprehenderit anim. Exercitation mollit aute ut laborum excepteur consectetur adipisicing cillum qui consectetur.",
     "isTemplate": false
   }
 ]

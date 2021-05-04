@@ -27,8 +27,8 @@ app.get('/', async (req, res) => {
 
   const isTemplate: boolean = req.query.template === 'true';
 
-  let filterRegex = QueryHelper.bodyToRegex(req.body);
-  let filter = QueryHelper.addNotExistsOrMatchtValue(filterRegex, 'isTemplate', isTemplate);
+  let filterRegex = QueryHelper.bodyToFilterWithRegex(req.body);
+  let filter = isTemplate ? filterRegex : QueryHelper.addNotExistsOrMatchtValue(filterRegex, 'isTemplate', false);
 
   console.log(filter);
   mongodb.findAllTodo((value) => {

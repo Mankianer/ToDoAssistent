@@ -1,7 +1,11 @@
 ###
-GET  http://localhost:3000/?template=false
+GET  http://localhost:3000/?template=true
 Content-Type: application/json
 Authorization: Bearer {{accessTokenEndless}}
+
+{
+  "isTemplate": true
+}
 
 ###
 GET  http://localhost:3000

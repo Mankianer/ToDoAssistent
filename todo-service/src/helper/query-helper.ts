@@ -1,14 +1,15 @@
 
 interface todoRegex {
-  [key: string]: RegExp
+  [key: string]: RegExp | any
 }
 
 export class QueryHelper {
 
-  static bodyToRegex(body: any): todoRegex {
+  static bodyToFilterWithRegex(body: any): todoRegex {
     let filterRegex: todoRegex = {};
     for (let [key, value] of Object.entries(body)) {
-      let regExp = new RegExp('' + value);
+      let valString = value.toString();
+      let regExp = (valString.startsWith('/')) ? new RegExp(valString.substring(1)) : value;
       filterRegex[key] = regExp;
     }
     return filterRegex;
