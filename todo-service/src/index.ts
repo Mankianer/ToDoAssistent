@@ -1,5 +1,6 @@
 import express from "express";
 import {MongodbTodo} from "./helper/mongodb-todo";
+import {QueryHelper} from "./helper/query-helper";
 import bodyParser from "body-parser";
 import {ObjectID} from "mongodb";
 import JsonWebToken, {SignOptions} from "jsonwebtoken";
@@ -21,21 +22,11 @@ const mongodb = new MongodbTodo();
 
 const port = process.env.PORT || 3000;
 
-interface todoRegex {
-  [key: string]: RegExp
-}
 
 app.get('/', (req, res) => {
-  let filterRegex: todoRegex = {};
-  for (let [key, value] of Object.entries(req.body)) {
-    let regExp = new RegExp('' + value);
-    filterRegex[key] = regExp;
-  }
-  let filterA: any = Object.assign({}, filterRegex);
-  filterA['isTemplate'] = {$exists: false};
-  let filterB: any = Object.assign({}, filterRegex);
-  filterB['isTemplate'] = false;
-  let filter = {$or: [filterA, filterB]}
+
+  let filterRegex = QueryHelper.bodyToRegex(req.body);
+  let filter = QueryHelper.addNotExistsOrMatchtValue(filterRegex, 'isTemplate', false);
 
   console.log(filter);
   mongodb.findAllTodo((value) => {
