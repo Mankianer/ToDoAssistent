@@ -5,7 +5,7 @@ Authorization: Bearer {{accessTokenEndless}}
 
 
 {
-  "title": "test_Relaxation_?"
+  "category": "SocialContact"
 }
 
 ###

@@ -30,9 +30,7 @@ app.get('/', (req, res) => {
   for (let [key, value] of Object.entries(req.body)) {
     let regExp = new RegExp('' + value);
     filter[key] = regExp;
-    console.log(key + ':' + value + ':' + regExp);
   }
-  console.log(filter);
   mongodb.findAllTodo((value) => {
     res.send(value);
   }, filter);
