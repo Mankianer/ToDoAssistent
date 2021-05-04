@@ -8,7 +8,7 @@ export class MongodbTodo {
   // Connection URL
   url = process.env.MONGODB_URL || 'mongodb://admin:admin@localhost:27017/?authMechanism=SCRAM-SHA-1&authSource=admin&useUnifiedTopology=true';
   client: MongoClient;
-  todoCollection: Collection;
+  todoCollection: Collection<Todo>;
 
   constructor() {
     this.client = new MongoClient(this.url);

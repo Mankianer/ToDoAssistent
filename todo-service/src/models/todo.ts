@@ -7,4 +7,5 @@ export interface Todo {
   description: '';
   status: string;
   priority: number;
+  isTemplate: false;
 }

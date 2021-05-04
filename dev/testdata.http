@@ -1,4 +1,48 @@
-###
+###TemplateV1
+POST  http://localhost:3000
+Content-Type: application/json
+Authorization: Bearer {{accessTokenEndless}}
+
+[
+  {
+    "title": "test_Template_Routine_0",
+    "category": "Routine",
+    "latestFinish": "Tue Aug 31 2021 18:04:43 GMT+0000 (UTC)",
+    "status": "todo",
+    "priority": 2,
+    "description": "Eiusmod commodo ex fugiat elit consectetur exercitation aliquip. Irure sint in esse dolore cupidatat. Esse ipsum sint elit velit laborum labore commodo.",
+    "isTemplate": true
+  },
+  {
+    "title": "test_Template_Routine_1",
+    "category": "Routine",
+    "latestFinish": "Fri Sep 24 2021 14:48:33 GMT+0000 (UTC)",
+    "status": "todo",
+    "priority": 0,
+    "description": "Do officia ullamco dolor nisi reprehenderit sint sit proident minim minim nulla minim. Mollit duis id eu laborum pariatur dolor consequat anim incididunt labore ipsum. Deserunt aliqua tempor tempor dolor veniam excepteur officia nisi veniam aliquip ipsum ullamco est ullamco.",
+    "isTemplate": true
+  },
+  {
+    "title": "test_Routine_0",
+    "category": "Routine",
+    "latestFinish": "Wed May 19 2021 08:53:43 GMT+0000 (UTC)",
+    "status": "todo",
+    "priority": 0,
+    "description": "Ullamco sunt sunt mollit fugiat consectetur irure ex tempor magna deserunt proident non excepteur laborum. Ea nisi et voluptate ex nostrud Lorem consequat fugiat veniam. Laborum aliqua tempor fugiat cillum.",
+    "isTemplate": false
+  },
+  {
+    "title": "test_Routine_1",
+    "category": "Routine",
+    "latestFinish": "Fri May 07 2021 02:24:21 GMT+0000 (UTC)",
+    "status": "todo",
+    "priority": "-1",
+    "description": "Aliquip exercitation eu irure in commodo elit et. Mollit amet id cupidatat consectetur nisi incididunt laboris. Ex fugiat nostrud aute officia est sint sint.",
+    "isTemplate": false
+  }
+]
+
+###V1:
 POST  http://localhost:3000
 Content-Type: application/json
 Authorization: Bearer {{accessTokenEndless}}

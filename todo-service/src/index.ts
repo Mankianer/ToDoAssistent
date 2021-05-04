@@ -26,11 +26,18 @@ interface todoRegex {
 }
 
 app.get('/', (req, res) => {
-  let filter: todoRegex = {};
+  let filterRegex: todoRegex = {};
   for (let [key, value] of Object.entries(req.body)) {
     let regExp = new RegExp('' + value);
-    filter[key] = regExp;
+    filterRegex[key] = regExp;
   }
+  let filterA: any = Object.assign({}, filterRegex);
+  filterA['isTemplate'] = {$exists: false};
+  let filterB: any = Object.assign({}, filterRegex);
+  filterB['isTemplate'] = false;
+  let filter = {$or: [filterA, filterB]}
+
+  console.log(filter);
   mongodb.findAllTodo((value) => {
     res.send(value);
   }, filter);
