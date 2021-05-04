@@ -1,4 +1,4 @@
-import {Collection, MongoClient} from "mongodb";
+import {Collection, FilterQuery, MongoClient} from "mongodb";
 import {Todo} from '../models/todo';
 
 export class MongodbTodo {
@@ -23,8 +23,8 @@ export class MongodbTodo {
     });
   }
 
-  public findAllTodo(callback: (value: any[]) => any): void {
-    this.todoCollection.find().toArray((err, todos) => {
+  public findAllTodo(callback: (value: any[]) => any, filter?: FilterQuery<any>): void {
+    this.todoCollection.find(filter).toArray((err, todos) => {
       if (err) {
         console.error(err);
       }
@@ -35,6 +35,10 @@ export class MongodbTodo {
 
   public addToDo(todo: Todo, callback?: (value: any) => void) {
     this.todoCollection.insertOne(todo, callback);
+  }
+
+  public addToDos(todos: Todo[], callback?: (value: any) => void) {
+    this.todoCollection.insertMany(todos, callback);
   }
 
   public deleteToDo(todo: Todo, callback?: (value: any) => void) {

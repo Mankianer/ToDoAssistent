@@ -1,22 +1,44 @@
 ###
 GET  http://localhost:3000
 Content-Type: application/json
-Authorization: Bearer {{accessToken}}
+Authorization: Bearer {{accessTokenEndless}}
+
+
+{
+  "title": "test_Relaxation_?"
+}
 
 ###
 GET  http://localhost:3003
 Content-Type: application/json
-Authorization: Bearer {{accessToken}}
+Authorization: Bearer {{accessTokenEndless}}
 
 ###
 POST  http://localhost:3000
 Content-Type: application/json
-Authorization: Bearer {{accessToken}}
+Authorization: Bearer {{accessTokenEndless}}
 
 {
-  "titel": "test",
+  "title": "test",
   "description": "beschreibung..."
 }
+
+###
+POST  http://localhost:3000
+Content-Type: application/json
+Authorization: Bearer {{accessTokenEndless}}
+
+  [
+    {
+      "title": "testA",
+      "description": "beschreibung..."
+    },
+    {
+      "title": "testB",
+      "description": "beschreibung..."
+    }
+  ]
+
 
 ###
 PUT  http://localhost:3000
@@ -24,7 +46,7 @@ Content-Type: application/json
 
 {
   "_id": "6081d42884fd65334c6c1333",
-  "titel": "test23",
+  "title": "test23",
   "description": "beschreibungX2..."
 }
 

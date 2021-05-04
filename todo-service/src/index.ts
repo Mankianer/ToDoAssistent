@@ -8,6 +8,7 @@ import jwt from "express-jwt";
 
 import {Todo} from "./models/todo";
 import fs from "fs";
+import {ok} from "assert";
 
 const app = express();
 app.use(bodyParser.urlencoded({extended: true}));
@@ -20,20 +21,37 @@ const mongodb = new MongodbTodo();
 
 const port = process.env.PORT || 3000;
 
+interface todoRegex {
+  [key: string]: RegExp
+}
+
 app.get('/', (req, res) => {
+  let filter: todoRegex = {};
+  for (let [key, value] of Object.entries(req.body)) {
+    let regExp = new RegExp('' + value);
+    filter[key] = regExp;
+    console.log(key + ':' + value + ':' + regExp);
+  }
+  console.log(filter);
   mongodb.findAllTodo((value) => {
     res.send(value);
-  });
+  }, filter);
 })
 
 app.post('/', (req, res) => {
-  const todo: Todo = req.body;
-  if (todo._id !== undefined) {
-    res.status(405)
-    res.send("_id !== undefined");
+  if (Array.isArray(req.body)) {
+    const todos: Todo[] = req.body;
+    mongodb.addToDos(todos);
+    res.send('ok');
+  } else {
+    const todo: Todo = req.body;
+    if (todo._id !== undefined) {
+      res.status(405)
+      res.send("_id !== undefined");
+    }
+    mongodb.addToDo(todo);
+    res.send(todo);
   }
-  mongodb.addToDo(todo);
-  res.send(todo);
 });
 
 app.put('/', (req, res) => {
