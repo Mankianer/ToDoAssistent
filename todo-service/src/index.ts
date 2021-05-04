@@ -23,10 +23,12 @@ const mongodb = new MongodbTodo();
 const port = process.env.PORT || 3000;
 
 
-app.get('/', (req, res) => {
+app.get('/', async (req, res) => {
+
+  const isTemplate: boolean = req.query.template === 'true';
 
   let filterRegex = QueryHelper.bodyToRegex(req.body);
-  let filter = QueryHelper.addNotExistsOrMatchtValue(filterRegex, 'isTemplate', false);
+  let filter = QueryHelper.addNotExistsOrMatchtValue(filterRegex, 'isTemplate', isTemplate);
 
   console.log(filter);
   mongodb.findAllTodo((value) => {
