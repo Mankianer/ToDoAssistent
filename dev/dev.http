@@ -1,4 +1,9 @@
 ###
+GET  http://localhost:3000/
+Content-Type: application/json
+Authorization: Bearer {{accessTokenEndless}}
+
+###
 GET  http://localhost:3000/?template=true
 Content-Type: application/json
 Authorization: Bearer {{accessTokenEndless}}
