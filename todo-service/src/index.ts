@@ -28,6 +28,11 @@ app.get('/', async (req, res) => {
   const isTemplate: boolean = req.query.template === 'true';
 
   let filterRegex = QueryHelper.bodyToFilterWithRegex(req.body);
+  console.log(filterRegex);
+  if(filterRegex._id) {
+    filterRegex._id = new ObjectID(filterRegex._id);
+  }
+  console.log(filterRegex);
   let filter = isTemplate ? filterRegex : QueryHelper.addNotExistsOrMatchtValue(filterRegex, 'isTemplate', false);
 
   console.log(filter);
