@@ -20,11 +20,12 @@ const todoservice = process.env.TODO_SERVICE_URL || 'http://localhost:3000/';
 
 app.get('/', async (req, res) => {
   let token = req.header('authorization');
+  const templateHelper = new TemplateHelper(todoservice, token);
   axios.get<TodoTemplate[]>(todoservice + '?template=true', {
     headers: {'authorization': token},
     data: {isTemplate: true}
   }).then(value => {
-    return TemplateHelper.TemplatesToToDos(value.data);
+    return templateHelper.TemplatesToToDos(value.data);
   }).then(value => res.send(value));
 
   // res.send('ok')
@@ -32,11 +33,12 @@ app.get('/', async (req, res) => {
 
 app.get('/getTemplates', async (req, res) => {
   let token = req.header('authorization');
+  const templateHelper = new TemplateHelper(todoservice, token);
   axios.get<TodoTemplate[]>(todoservice + '?template=true', {
     headers: {'authorization': token},
     data: {isTemplate: true}
-  }).then(value => {
-    return TemplateHelper.TemplatesToToDosByDates(value.data, new Date(), new Date(2021, 4, 14));
+  }).then((value) => {
+    return templateHelper.TemplatesToToDosByDates(value.data, new Date(), new Date(2021, 4, 14));
   }).then(value => res.send(value));
 
   // res.send('ok')
